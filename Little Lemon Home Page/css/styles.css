@@ -1,0 +1,94 @@
+* {
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+body {
+    background-color: #d1dcd8;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    border: 0.1rem solid #495e57;
+    background-color: #495e57;
+    list-style: none;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    text-decoration: none;
+}
+
+section {
+    display: flex;
+}
+
+article > img {
+    height: auto;
+    max-width: 90%;
+}
+
+article {
+    flex: 1;
+    border: 0.1rem solid #f4ce14;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+article:hover {
+    background-color: #efd65a;
+}
+
+table {
+    text-align: left;
+}
+
+footer {
+    display: flex;
+}
+
+footer div {
+    flex: 1;
+}
+
+div > p {
+    text-align: center;
+    border-top: 0.1rem solid black;
+}
+
+.promotion {
+    background-image: url("../images/content/lamb_chop.jpg");
+}
+
+.information {
+    background-color: #f9e377;
+}
+
+.button {
+    background-color: #495e57;
+    color: #d1dcd8;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #364741;
+}
