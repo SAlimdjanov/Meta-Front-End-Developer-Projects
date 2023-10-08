@@ -8,4 +8,4 @@ Repository Contents in Chronological Order:
 
 2. **Little Lemon Home Page:** Created a simple home page of Little Lemon's Website using HTML and CSS. Completed as part of requirements of the _HTML and CSS In-Depth_ course.
 
-Content will be updated as I progress through this certification.
+3. **Simplest Functioning Calculator:** A barebones calculator created as a single-page web application using the React Framework. Completed as part of requirements of the _React Basics_ course.
