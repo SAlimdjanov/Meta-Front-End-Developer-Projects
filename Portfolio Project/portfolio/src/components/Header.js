@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -33,6 +33,30 @@ const socials = [
 ];
 
 const Header = () => {
+    const headerRef = useRef();
+    const [prevScrollY, setPrevScrollY] = useState(0);
+
+    const handleScroll = () => {
+        const currentScrollPos = window.scrollY;
+        const isScrollingDown = currentScrollPos > prevScrollY;
+
+        if (isScrollingDown) {
+            headerRef.current.style.transform = "translateY(-200px)";
+        } else {
+            headerRef.current.style.transform = "translateY(0)";
+        }
+
+        setPrevScrollY(currentScrollPos);
+    };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [prevScrollY]);
+
     const handleClick = (anchor) => () => {
         const id = `${anchor}-section`;
         const element = document.getElementById(id);
@@ -46,6 +70,7 @@ const Header = () => {
 
     return (
         <Box
+            ref={headerRef}
             position="fixed"
             top={0}
             left={0}
@@ -65,30 +90,32 @@ const Header = () => {
                 >
                     <nav>
                         <HStack spacing={8}>
-                            {socials.map((social, index) => (
-                                <a href={social.url} key={index}>
-                                    <FontAwesomeIcon
-                                        icon={social.icon}
-                                        size="2x"
-                                    />
-                                </a>
-                            ))}
+                            {socials.map((social, index) => {
+                                return (
+                                    <a href={social.url} key={index}>
+                                        <FontAwesomeIcon
+                                            icon={social.icon}
+                                            size="2x"
+                                        />
+                                    </a>
+                                );
+                            })}
                         </HStack>
                     </nav>
                     <nav>
                         <HStack spacing={8}>
-                            <a
-                                href="/#projects"
-                                onClick={handleClick("projects")}
-                            >
-                                Projects
-                            </a>
-                            <a
-                                href="/#contact-me"
-                                onClick={handleClick("contactme")}
-                            >
-                                Contact Me
-                            </a>
+                            {[
+                                { label: "Contact Me", anchor: "contactme" },
+                                { label: "Projects", anchor: "projects" },
+                            ].map((item, index) => (
+                                <a
+                                    href={`/#${item.anchor}`}
+                                    key={index}
+                                    onClick={handleClick(item.anchor)}
+                                >
+                                    {item.label}
+                                </a>
+                            ))}
                         </HStack>
                     </nav>
                 </HStack>
@@ -96,4 +123,5 @@ const Header = () => {
         </Box>
     );
 };
+
 export default Header;

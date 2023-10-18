@@ -34,7 +34,9 @@ const LandingSection = () => {
         validationSchema: Yup.object({
             firstName: Yup.string().required("Required"),
             email: Yup.string().email("Invalid email").required("Required"),
-            comment: Yup.string().required("Required"),
+            comment: Yup.string()
+                .min(25, "Must be at least 25 characters")
+                .required("Required"),
         }),
     });
 
