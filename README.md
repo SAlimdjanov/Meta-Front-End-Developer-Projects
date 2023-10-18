@@ -4,8 +4,10 @@ All projects from the [Front-End Developer Professional Certificate](https://www
 
 Repository Contents in Chronological Order:
 
-1. **Little Lemon Receipt Maker:** A simple, short receipt generation program written on JavaScript for a hypothetical restauraunt called Little Lemon. Completed as part of requirements for the _Programming with JavaScript_ course.
+1. **Little Lemon Receipt Maker:** A simple, short receipt generation program written on JavaScript for a hypothetical restauraunt called Little Lemon. Computes the price for a given dish and discounts if any are applied. Completed as part of requirements for the _Programming with JavaScript_ course.
 
-2. **Little Lemon Home Page:** Created a simple home page of Little Lemon's Website using HTML and CSS. Completed as part of requirements of the _HTML and CSS In-Depth_ course.
+2. **Little Lemon Home Page:** Created a simple home page of Little Lemon's Website using HTML and CSS. Contains promotion, menu, booking, and hours sections. Completed as part of requirements of the _HTML and CSS In-Depth_ course.
 
-3. **Simplest Functioning Calculator:** A barebones calculator created as a single-page web application using the React Framework. Completed as part of requirements of the _React Basics_ course.
+3. **Simplest Functioning Calculator:** A barebones calculator created as a single-page web application using the React Framework that performs simple arithmetic. Completed as part of requirements of the _React Basics_ course.
+
+4. **Sample Portfolio:** A Sample Portfolio Web App using React. Contains social media links, project cards, and a contact form. Completed as part of requirements of the _Advanced React_ course.
