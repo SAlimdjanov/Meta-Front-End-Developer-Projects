@@ -13,3 +13,5 @@ Repository Contents in Chronological Order:
 4. **Sample Portfolio:** A Sample Portfolio Web App using React. Contains social media links, project cards, and a contact form. Completed as part of requirements of the _Advanced React_ course.
 
 5. **Little Lemon Table Booking Page:** Created a Table Reservation Page on the Little Lemon Web App Prototyle using Figma. All steps were taken in the UX/UI design process as a user persona, journey map, and wireframe were created leading up to creation of the prototype. Completed as part of requirements of the _Principles of UX/UI Design_ course.
+
+6. **Capstone Project:** Created a Web App for the Little Lemon Restaurant in React. This is the Capstone Project of the Certification. (Work-in-Progress)
