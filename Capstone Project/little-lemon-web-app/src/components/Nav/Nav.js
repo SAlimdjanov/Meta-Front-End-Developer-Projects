@@ -1,3 +1,6 @@
+import "./Nav.css";
+import HeaderLogo from "../../assets/Logo.jpg";
+
 const navElements = [
     {
         elementName: "HOME",
@@ -32,7 +35,7 @@ function mapNavElements() {
                 return (
                     <li key={index}>
                         <a href={navElement.url} key={index}>
-                            {navElement.elementName}
+                            <h3>{navElement.elementName}</h3>
                         </a>
                     </li>
                 );
@@ -42,7 +45,20 @@ function mapNavElements() {
 }
 
 function Nav() {
-    return <>{mapNavElements()}</>;
+    return (
+        <>
+            <header>
+                <nav className="nav-bar">
+                    <img
+                        src={HeaderLogo}
+                        className="header-logo"
+                        alt="header-logo"
+                    />
+                    <section className="nav-links">{mapNavElements()}</section>
+                </nav>
+            </header>
+        </>
+    );
 }
 
 export default Nav;
