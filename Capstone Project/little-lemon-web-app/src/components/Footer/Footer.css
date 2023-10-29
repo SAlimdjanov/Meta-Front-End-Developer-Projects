@@ -1,11 +1,14 @@
+footer {
+    padding-left: 7vw;
+    padding-right: 7vw;
+}
+
 .page-footer {
     background-color: #edefee;
     display: grid;
     grid-template-columns: auto, 1fr;
     grid-template-rows: auto 1fr;
     align-items: center;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
 }
 
 .footer-logo {
@@ -28,7 +31,9 @@
     border-top: 1pt solid #6f6f6f;
 }
 
-@media (max-width: 930px) {
+/* Responsive elements */
+
+@media (max-width: 1092px) {
     .footer-logo {
         height: 25vw;
         min-height: 25vh;
@@ -37,12 +42,11 @@
     .footer-links {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, auto);
-        text-align: center;
         align-items: center;
     }
 }
 
-@media (max-width: 710px) {
+@media (max-width: 785px) {
     .footer-logo {
         height: 25vw;
         min-height: 25vh;

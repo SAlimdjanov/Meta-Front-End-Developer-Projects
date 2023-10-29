@@ -30,7 +30,7 @@ const footerLinks = [
 
 const footerContact = [
     "Address: \n 123 Little Lemon St.",
-    "Phone Number: \n 312 - XXX - XXXX",
+    "Phone: \n 312 - XXX - XXXX",
     "Email: contact@littlelemon.com",
 ];
 

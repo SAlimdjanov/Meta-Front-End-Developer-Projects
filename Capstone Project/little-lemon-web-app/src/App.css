@@ -11,10 +11,12 @@ div {
 }
 
 body {
-    margin: 0.5vh 3vw 0.5vh 3vw;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
 }
 
 /* Text formatting: */
+
 h1,
 h2,
 h3,
@@ -94,6 +96,19 @@ p {
 a {
     text-decoration: none;
     color: #6f6f6f;
+}
+
+/* Clickable object styles */
+
+button {
+    width: 220px;
+    height: 65px;
+    border-radius: 16px;
+    background-color: #f4ce14;
+    font-family: "Karla", sans-serif;
+    font-size: 16pt;
+    font-weight: 800;
+    border-style: none;
 }
 
 /* Prevent window widths less than 280px to prevent visual issues */
