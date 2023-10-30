@@ -1,5 +1,5 @@
 import "./Footer.css";
-import FooterLogo from "../../assets/Footer Logo B.png";
+import FooterLogo from "./assets/Footer Logo B.png";
 
 const footerLinks = [
     {

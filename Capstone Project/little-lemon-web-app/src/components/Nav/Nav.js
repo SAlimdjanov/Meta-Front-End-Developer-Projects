@@ -1,5 +1,5 @@
 import "./Nav.css";
-import HeaderLogo from "../../assets/Logo.jpg";
+import HeaderLogo from "./assets/Logo.jpg";
 
 const navElements = [
     {
