@@ -1,0 +1,45 @@
+.testimonial-card {
+    background-color: white;
+    min-height: 340px;
+    display: grid;
+    grid-template-rows: 1fr 3fr 2fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.rating {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.picture-and-name {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.picture-container {
+    margin: 10px;
+    border-radius: 16px;
+    max-height: 140px;
+    max-width: 100px;
+    overflow: hidden;
+}
+
+.picture-container > img {
+    width: 100px;
+    height: 140px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.testimonial {
+    padding: 1vh 2vw 1.5vh 2vw;
+}
+
+.testimonial > p {
+    margin: 0%;
+}

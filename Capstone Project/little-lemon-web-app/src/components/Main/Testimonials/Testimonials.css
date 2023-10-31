@@ -1,5 +1,14 @@
 .testimonials-section {
     background-color: #edefee;
     display: grid;
-    padding: 2vw 7vw 2vw 7vw;
+    padding: 2vh 7vw 4vh 7vw;
+}
+
+.testimonial-cards {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vw;
 }

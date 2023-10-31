@@ -1,4 +1,22 @@
 .specials-section {
     display: grid;
-    padding: 2vw 7vw 2vw 7vw;
+    padding: 4vh 7vw 4vh 7vw;
+}
+
+.specials-header {
+    display: grid;
+}
+
+.specials-header > button {
+    grid-column: 2;
+    justify-self: right;
+    align-self: center;
+}
+
+.special-dishes {
+    display: grid;
+    place-items: center;
+    padding-top: 4vh;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
 }

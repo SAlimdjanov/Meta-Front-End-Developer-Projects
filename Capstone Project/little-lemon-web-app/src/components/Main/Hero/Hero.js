@@ -4,7 +4,7 @@ import HeroImage from "./assets/Restaurant Food.jpg";
 function Hero() {
     return (
         <>
-            <section className="hero-section">
+            <div className="hero-section">
                 <section className="hero-text">
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
@@ -21,7 +21,7 @@ function Hero() {
                         alt="restaurant-food"
                     />
                 </section>
-            </section>
+            </div>
         </>
     );
 }
