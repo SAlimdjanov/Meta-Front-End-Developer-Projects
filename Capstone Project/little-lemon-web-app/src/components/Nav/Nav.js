@@ -1,10 +1,11 @@
 import "./Nav.css";
 import HeaderLogo from "./assets/Logo.jpg";
+import { Link } from "react-router-dom";
 
 const navElements = [
     {
         elementName: "HOME",
-        url: "/#home",
+        url: "/",
     },
     {
         elementName: "ABOUT",
@@ -16,7 +17,7 @@ const navElements = [
     },
     {
         elementName: "RESERVATIONS",
-        url: "/#reservations",
+        url: "/reservations",
     },
     {
         elementName: "ORDER ONLINE",
@@ -34,9 +35,9 @@ function mapNavElements() {
             {navElements.map((navElement, index) => {
                 return (
                     <li key={index}>
-                        <a href={navElement.url} key={index}>
+                        <Link to={navElement.url} key={index}>
                             <h3>{navElement.elementName}</h3>
-                        </a>
+                        </Link>
                     </li>
                 );
             })}
