@@ -1,0 +1,61 @@
+.reservations-header {
+    background-color: #495e57;
+    padding: 2vh 7vw 2vh 7vw;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2vw;
+}
+
+.title-and-description > h1 {
+    color: #f4ce14;
+    margin: 0%;
+}
+
+.title-and-description > p {
+    color: #ffffff;
+    margin: 0%;
+}
+
+.restaurant-image-container {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    grid-column: 2;
+    justify-self: right;
+    align-self: center;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.restaurant-image-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.booking-section {
+    padding: 2vh 7vw 2vh 7vw;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.chef-image-container {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    grid-column: 1;
+    justify-self: left;
+    align-self: center;
+    width: 25vw;
+    height: 25vw;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.chef-image-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}

@@ -1,0 +1,32 @@
+.booking-title {
+    margin: 0%;
+}
+
+.reservation-form {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-family: "Karla", sans-serif;
+    font-size: 16pt;
+    color: #6f6f6f;
+    display: grid;
+}
+
+.personal-info {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vh;
+}
+
+.notes-and-requests {
+    margin-top: 2vh;
+    display: grid;
+    gap: 2vh;
+}
+
+.booking-button {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    justify-self: left;
+    align-self: self-end;
+}

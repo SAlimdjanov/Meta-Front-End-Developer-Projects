@@ -111,6 +111,27 @@ button {
     border-style: none;
 }
 
+button:hover {
+    background-color: #dab600;
+}
+
+/* Input styles */
+
+input[type="date"],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select {
+    font-family: "Karla", sans-serif;
+    font-size: 16pt;
+}
+
+input[type="text"] {
+    word-wrap: break-word;
+    white-space: pre-line;
+}
+
 /* Prevent window widths less than 280px to prevent visual issues */
 
 @media (max-width: 279px) {
