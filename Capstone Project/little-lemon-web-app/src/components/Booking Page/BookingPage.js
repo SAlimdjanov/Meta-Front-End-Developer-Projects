@@ -1,9 +1,31 @@
-import "./Reservations.css";
+import "./BookingPage.css";
 import RestaurantImage from "./assets/Restaurant.jpg";
 import RestaurantChef from "./assets/Restaurant Chef.jpg";
 import BookingForm from "./Form/BookingForm";
+import React, { useReducer } from "react";
 
-function Reservations() {
+function BookingPage() {
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "UPDATE_TIMES":
+                // For now, just return all times
+                return [
+                    "3:00 PM",
+                    "4:00 PM",
+                    "5:00 PM",
+                    "6:00 PM",
+                    "7:00 PM",
+                    "8:00 PM",
+                    "9:00 PM",
+                    "10:00 PM",
+                ];
+            default:
+                return state;
+        }
+    };
+
+    const [availableTimes, dispatch] = useReducer(reducer, []);
+
     return (
         <>
             <main>
@@ -37,7 +59,10 @@ function Reservations() {
                         <img src={RestaurantChef} alt="chef" />
                     </section>
                     <section>
-                        <BookingForm />
+                        <BookingForm
+                            availableTimes={availableTimes}
+                            dispatch={dispatch}
+                        />
                     </section>
                 </div>
             </main>
@@ -45,4 +70,4 @@ function Reservations() {
     );
 }
 
-export default Reservations;
+export default BookingPage;

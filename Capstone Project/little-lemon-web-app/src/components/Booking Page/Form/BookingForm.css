@@ -1,10 +1,10 @@
 .booking-title {
-    margin: 0%;
+    margin: 2vh 0% 2vh 0%;
 }
 
 .reservation-form {
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     font-family: "Karla", sans-serif;
     font-size: 16pt;
     color: #6f6f6f;
@@ -25,7 +25,7 @@
 }
 
 .booking-button {
-    margin-top: 2vh;
+    margin-top: 3vh;
     margin-bottom: 2vh;
     justify-self: left;
     align-self: self-end;
