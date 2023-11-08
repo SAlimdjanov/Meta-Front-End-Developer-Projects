@@ -4,27 +4,35 @@ import RestaurantChef from "./assets/Restaurant Chef.jpg";
 import BookingForm from "./Form/BookingForm";
 import React, { useReducer } from "react";
 
-function BookingPage() {
-    const reducer = (state, action) => {
-        switch (action.type) {
-            case "UPDATE_TIMES":
-                // For now, just return all times
-                return [
-                    "3:00 PM",
-                    "4:00 PM",
-                    "5:00 PM",
-                    "6:00 PM",
-                    "7:00 PM",
-                    "8:00 PM",
-                    "9:00 PM",
-                    "10:00 PM",
-                ];
-            default:
-                return state;
-        }
-    };
+export const initializeTimes = () => {
+    // For now, return all times
+    return [
+        "3:00 PM",
+        "4:00 PM",
+        "5:00 PM",
+        "6:00 PM",
+        "7:00 PM",
+        "8:00 PM",
+        "9:00 PM",
+        "10:00 PM",
+    ];
+};
 
-    const [availableTimes, dispatch] = useReducer(reducer, []);
+export const updateTimes = (state, action) => {
+    switch (action.type) {
+        case "UPDATE_TIMES":
+            return Array.isArray(action.payload) ? action.payload : state;
+        default:
+            return state;
+    }
+};
+
+function BookingPage() {
+    const [availableTimes, dispatch] = useReducer(
+        updateTimes,
+        [],
+        initializeTimes
+    );
 
     return (
         <>
