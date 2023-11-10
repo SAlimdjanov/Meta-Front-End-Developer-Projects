@@ -1,6 +1,7 @@
 .testimonial-card {
     background-color: white;
     min-height: 340px;
+    min-width: 240px;
     display: grid;
     grid-template-rows: 1fr 3fr 2fr;
     align-items: center;
@@ -42,4 +43,17 @@
 
 .testimonial > p {
     margin: 0%;
+}
+
+@media (max-width: 1190px) {
+    .testimonial-card {
+        max-width: 35vw;
+    }
+}
+
+@media (max-width: 420px) {
+    .testimonial {
+        text-align: center;
+        padding: 2vh 2vw 2.5vh 2vw;
+    }
 }

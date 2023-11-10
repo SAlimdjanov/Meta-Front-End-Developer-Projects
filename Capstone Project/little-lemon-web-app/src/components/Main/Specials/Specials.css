@@ -20,3 +20,17 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2vw;
 }
+
+@media (max-width: 1140px) {
+    .special-dishes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4vw;
+    }
+}
+
+@media (max-width: 640px) {
+    .special-dishes {
+        grid-template-columns: 1fr;
+        gap: 4vw;
+    }
+}

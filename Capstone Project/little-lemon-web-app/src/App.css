@@ -132,8 +132,6 @@ input[type="text"] {
     white-space: pre-line;
 }
 
-/* Prevent window widths less than 280px to prevent visual issues */
-
 @media (max-width: 279px) {
     html,
     body {

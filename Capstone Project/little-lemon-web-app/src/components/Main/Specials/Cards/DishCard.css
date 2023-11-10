@@ -75,3 +75,44 @@
     height: 40px;
     min-height: 30px;
 }
+
+@media (max-width: 1140px) {
+    .card-image-container {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 1025px) {
+    .card {
+        grid-template-rows: 30vh 10vw 20vw auto;
+        max-height: 800px;
+    }
+}
+
+@media (max-width: 640px) {
+    .card {
+        width: 40vh;
+        grid-template-rows: 30vh 0.5fr 2fr auto;
+    }
+
+    .card-image-container {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 420px) {
+    .card-image-container {
+        width: 40vh;
+    }
+}
+
+@media (max-width: 285px) {
+    .card {
+        width: 50vh;
+        gap: 4vh;
+    }
+
+    .card-image-container {
+        width: 50vh;
+    }
+}

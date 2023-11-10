@@ -12,3 +12,17 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 2vw;
 }
+
+@media (max-width: 1190px) {
+    .testimonial-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4vw;
+    }
+}
+
+@media (max-width: 605px) {
+    .testimonial-cards {
+        grid-template-columns: 1fr;
+        gap: 4vw;
+    }
+}

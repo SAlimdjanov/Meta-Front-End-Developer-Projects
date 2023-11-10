@@ -30,3 +30,12 @@
     justify-self: left;
     align-self: self-end;
 }
+
+@media (max-width: 1220px) {
+    .personal-info {
+        display: grid;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2vh;
+    }
+}
