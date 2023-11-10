@@ -6,7 +6,7 @@ import About from "./About/About";
 function Main() {
     return (
         <>
-            <main>
+            <main aria-label="main-section">
                 <Hero></Hero>
                 <Specials></Specials>
                 <Testimonials></Testimonials>

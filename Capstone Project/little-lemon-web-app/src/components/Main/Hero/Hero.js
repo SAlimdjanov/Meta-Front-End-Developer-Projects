@@ -4,8 +4,8 @@ import HeroImage from "./assets/Restaurant Food.jpg";
 function Hero() {
     return (
         <>
-            <div className="hero-section">
-                <section className="hero-text">
+            <div aria-label="hero-section" className="hero-section">
+                <section aria-label="hero-text" className="hero-text">
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
                     <p>
@@ -14,7 +14,10 @@ function Hero() {
                     </p>
                     <button>Reserve a table</button>
                 </section>
-                <section className="hero-image-container">
+                <section
+                    aria-label="hero-image"
+                    className="hero-image-container"
+                >
                     <img
                         src={HeroImage}
                         className="hero-image"

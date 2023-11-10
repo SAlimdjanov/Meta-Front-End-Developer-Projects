@@ -5,8 +5,8 @@ import AMimageB from "./assets/Mario and Adrian B.jpg";
 function About() {
     return (
         <>
-            <div className="about-section">
-                <section className="about-text">
+            <div aria-label="about-section" className="about-section">
+                <section aria-label="about-text" className="about-text">
                     <h2>About Us</h2>
                     <p>
                         Welcome to Little Lemon. Nestled in the heart of
@@ -27,7 +27,10 @@ function About() {
                         serve.
                     </p>
                 </section>
-                <section className="image-layout">
+                <section
+                    aria-label="images-of-adrian-and-mario"
+                    className="image-layout"
+                >
                     <div className="image-container">
                         <img src={AMimageA} alt="adrian-and-mario-A"></img>
                     </div>

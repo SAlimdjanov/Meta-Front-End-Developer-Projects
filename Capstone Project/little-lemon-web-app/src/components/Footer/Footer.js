@@ -5,26 +5,32 @@ const footerLinks = [
     {
         text: "Home",
         url: "/#home",
+        ariaLabel: "link-to-home",
     },
     {
         text: "About",
         url: "/#about",
+        ariaLabel: "link-to-about",
     },
     {
         text: "Menu",
         url: "/#menu",
+        ariaLabel: "link-to-menu",
     },
     {
         text: "Reservations",
         url: "/#reservations",
+        ariaLabel: "link-to-reservations",
     },
     {
         text: "Order Online",
         url: "/#order-online",
+        ariaLabel: "link-to-order-online",
     },
     {
         text: "Login",
         url: "/#login",
+        ariaLabel: "link-to-login",
     },
 ];
 
@@ -38,21 +44,24 @@ const footerSocials = [
     {
         text: "Instagram",
         url: "https://www.instagram.com/",
+        ariaLabel: "link-to-instagram",
     },
     {
         text: "Facebook",
         url: "https://www.facebook.com/",
+        ariaLabel: "link-to-facebook",
     },
     {
         text: "X/Twitter",
         url: "https://twitter.com/",
+        ariaLabel: "link-to-x-twitter",
     },
 ];
 
 function mapLinkElements(elementObject) {
     return elementObject.map((element, index) => {
         return (
-            <p key={index}>
+            <p key={index} aria-label={element.ariaLabel}>
                 <a href={element.url} key={index}>
                     {element.text}
                 </a>
@@ -70,12 +79,13 @@ function mapContactElements() {
 function Footer() {
     return (
         <>
-            <footer className="page-footer">
-                <section className="footer-links">
+            <footer aria-label="page-footer" className="page-footer">
+                <section aria-label="footer-links" className="footer-links">
                     <section>
                         <img
                             src={FooterLogo}
                             className="footer-logo"
+                            aria-label="little-lemon-footer-logo"
                             alt="footer-logo"
                         />
                     </section>
@@ -83,7 +93,7 @@ function Footer() {
                         <h4>Website Links</h4>
                         {mapLinkElements(footerLinks)}
                     </section>
-                    <section>
+                    <section aria-label="contact-information">
                         <h4>Contact us</h4>
                         {mapContactElements()}
                     </section>
@@ -92,7 +102,7 @@ function Footer() {
                         {mapLinkElements(footerSocials)}
                     </section>
                 </section>
-                <section className="copyright">
+                <section arial-label="copyright" className="copyright">
                     <p>
                         Copyright &copy; Little Lemon Restaurant. All Rights
                         Reserved.

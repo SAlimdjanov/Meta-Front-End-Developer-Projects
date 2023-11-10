@@ -37,8 +37,14 @@ function BookingPage() {
     return (
         <>
             <main>
-                <div className="reservations-header">
-                    <section className="title-and-description">
+                <div
+                    aria-label="reservations-header"
+                    className="reservations-header"
+                >
+                    <section
+                        aria-label="title-and-description"
+                        className="title-and-description"
+                    >
                         <h1>Reservations</h1>
                         <p>
                             Experience the flavors of the Mediterranean at
@@ -58,15 +64,21 @@ function BookingPage() {
                             adventure.
                         </p>
                     </section>
-                    <section className="restaurant-image-container">
+                    <section
+                        aria-label="restaurant-dining-area-image"
+                        className="restaurant-image-container"
+                    >
                         <img src={RestaurantImage} alt="dining-area" />
                     </section>
                 </div>
-                <div className="booking-section">
-                    <section className="chef-image-container">
+                <div aria-label="booking-form" className="booking-section">
+                    <section
+                        aria-label="image-of-chef"
+                        className="chef-image-container"
+                    >
                         <img src={RestaurantChef} alt="chef" />
                     </section>
-                    <section>
+                    <section aria-label="booking-form-fields">
                         <BookingForm
                             availableTimes={availableTimes}
                             dispatch={dispatch}

@@ -11,24 +11,28 @@ const testimonialData = [
         image: AlexanderImg,
         alt: "alexander-image",
         quote: '"Excellent food and atmosphere! Would visit again."',
+        ariaLabel: "testimonial-alexander",
     },
     {
         personName: "Juan",
         image: JuanImg,
         alt: "juan-image",
         quote: '"Adrian and Mario\'s gem! Delicious, authentic cuisine."',
+        ariaLabel: "testimonial-juan",
     },
     {
         personName: "Uche",
         image: UcheImg,
         alt: "uche-image",
         quote: '"A Mediterranean delight! Amazing flavors!"',
+        ariaLabel: "testimonial-uche",
     },
     {
         personName: "Erik",
         image: ErikImg,
         alt: "erik-image",
         quote: '"Great dishes, kind servers, great experience overall."',
+        ariaLabel: "testimonial-erik",
     },
 ];
 
@@ -41,6 +45,7 @@ function mapTestimonialData() {
                 imgAlt={testimonial.alt}
                 person={testimonial.personName}
                 testimonial={testimonial.quote}
+                ariaLabel={testimonial.ariaLabel}
             ></TestimonialCard>
         );
     });
@@ -49,11 +54,17 @@ function mapTestimonialData() {
 function Testimonials() {
     return (
         <>
-            <div className="testimonials-section">
+            <div
+                aria-label="testimonials-section"
+                className="testimonials-section"
+            >
                 <section>
                     <h2>Testimonials</h2>
                 </section>
-                <section className="testimonial-cards">
+                <section
+                    aria-label="testimonial-cards"
+                    className="testimonial-cards"
+                >
                     {mapTestimonialData()}
                 </section>
             </div>

@@ -31,6 +31,7 @@ function BookingForm({ availableTimes, dispatch }) {
             <>
                 <label htmlFor="first-name">First Name:</label>
                 <input
+                    aria-label="first-name-input"
                     type="text"
                     id="first-name"
                     value={firstName}
@@ -41,6 +42,7 @@ function BookingForm({ availableTimes, dispatch }) {
                 ></input>
                 <label htmlFor="last-name">Last Name:</label>
                 <input
+                    aria-label="last-name-input"
                     type="text"
                     id="last-name"
                     value={lastName}
@@ -58,6 +60,7 @@ function BookingForm({ availableTimes, dispatch }) {
             <>
                 <label htmlFor="email">Email: </label>
                 <input
+                    aria-label="email-input"
                     type="email"
                     id="email"
                     value={email}
@@ -69,6 +72,7 @@ function BookingForm({ availableTimes, dispatch }) {
                 />
                 <label htmlFor="phone">Phone: </label>
                 <input
+                    aria-label="phone-number-input"
                     type="tel"
                     id="phone"
                     value={phone}
@@ -87,6 +91,7 @@ function BookingForm({ availableTimes, dispatch }) {
             <>
                 <label htmlFor="guests">Guests: </label>
                 <input
+                    aria-label="number-of-guests-input"
                     type="number"
                     placeholder="1"
                     min="1"
@@ -98,6 +103,7 @@ function BookingForm({ availableTimes, dispatch }) {
                 />
                 <label htmlFor="occasion">Occasion:</label>
                 <select
+                    aria-label="occasion-select-dropdown"
                     id="occasion"
                     value={occasion}
                     onChange={(e) => handleFieldChange(setOccasion, e)}
@@ -122,6 +128,7 @@ function BookingForm({ availableTimes, dispatch }) {
                     If 'Other' occasion was selected, please specify:
                 </label>
                 <input
+                    aria-label="other-occasion-details-input"
                     type="text"
                     id="other-details"
                     autoComplete="none"
@@ -137,6 +144,7 @@ function BookingForm({ availableTimes, dispatch }) {
             <>
                 <label htmlFor="notes">Any other notes or requests:</label>
                 <input
+                    aria-label="requests-and-notes-input"
                     type="text"
                     id="notes"
                     value={notes}
@@ -216,6 +224,7 @@ function BookingForm({ availableTimes, dispatch }) {
                     {emailAndPhone(email, setEmail, phone, setPhone)}
                     <label htmlFor="res-date">Date: </label>
                     <input
+                        aria-label="booking-date-selector"
                         type="date"
                         id="res-date"
                         value={date}
@@ -224,6 +233,7 @@ function BookingForm({ availableTimes, dispatch }) {
                     />
                     <label htmlFor="res-time">Time: </label>
                     <select
+                        aria-label="reservation-time-dropdown"
                         id="res-time"
                         value={bookingTime}
                         onChange={(e) => handleFieldChange(setBookingTime, e)}

@@ -12,6 +12,7 @@ const specialDishes = [
         alt: "greek-salad",
         description: `The famous Greek salad of crispy lettuce, peppers, olives, and our Chicago
         style feta cheese, garnished with crunchy garlic and rosemary croutons.`,
+        ariaLabel: "greek-salad-card",
     },
     {
         dishName: "Bruschetta",
@@ -20,6 +21,7 @@ const specialDishes = [
         alt: "bruschetta",
         description: `Our bruschetta is made from grilled bread that has been smeared with garlic
         and seasoned with salt and olive oil.`,
+        ariaLabel: "bruschetta-card",
     },
     {
         dishName: "Lemon Dessert",
@@ -28,6 +30,7 @@ const specialDishes = [
         alt: "lemon-dessert",
         description: `This comes straight from grandma's recipe book. Every last ingredient has
         been sourced and is as authentic as can be imagined.`,
+        ariaLabel: "lemon-dessert-card",
     },
 ];
 
@@ -41,6 +44,7 @@ function mapDishDetails() {
                 dishName={dish.dishName}
                 dishPrice={dish.price}
                 description={dish.description}
+                ariaLabel={dish.ariaLabel}
             ></DishCard>
         );
     });
@@ -49,12 +53,20 @@ function mapDishDetails() {
 function Specials() {
     return (
         <>
-            <div className="specials-section">
-                <section className="specials-header">
+            <div aria-label="specials-section" className="specials-section">
+                <section
+                    aria-label="specials-header"
+                    className="specials-header"
+                >
                     <h2>This Week's Specials</h2>
                     <button>Online Menu</button>
                 </section>
-                <section className="special-dishes">{mapDishDetails()}</section>
+                <section
+                    aria-label="specials-dish-cards"
+                    className="special-dishes"
+                >
+                    {mapDishDetails()}
+                </section>
             </div>
         </>
     );

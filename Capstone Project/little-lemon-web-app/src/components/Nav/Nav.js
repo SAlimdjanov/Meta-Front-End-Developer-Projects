@@ -34,8 +34,12 @@ function mapNavElements() {
         <ul>
             {navElements.map((navElement, index) => {
                 return (
-                    <li key={index}>
-                        <Link to={navElement.url} key={index}>
+                    <li key={index} aria-label="navigation-link">
+                        <Link
+                            to={navElement.url}
+                            key={index}
+                            aria-label={navElement.elementName}
+                        >
                             <h3>{navElement.elementName}</h3>
                         </Link>
                     </li>
@@ -48,12 +52,13 @@ function mapNavElements() {
 function Nav() {
     return (
         <>
-            <header>
-                <nav className="nav-bar">
+            <header aria-label="header-and-navigation-bar">
+                <nav aria-label="navigation-bar" className="nav-bar">
                     <img
                         src={HeaderLogo}
                         className="header-logo"
                         alt="header-logo"
+                        aria-label="little-lemon-logo"
                     />
                     <section className="nav-links">{mapNavElements()}</section>
                 </nav>
