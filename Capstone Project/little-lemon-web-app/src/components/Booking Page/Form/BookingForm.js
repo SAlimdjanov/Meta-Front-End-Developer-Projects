@@ -1,117 +1,12 @@
 import "./BookingForm.css";
 import React, { useState } from "react";
-
-function firstAndLastNames(firstName, setFirstName, lastName, setLastName) {
-    return (
-        <>
-            <label htmlFor="first-name">First Name:</label>
-            <input
-                type="text"
-                id="first-name"
-                value={firstName}
-                autoComplete="given-name"
-                placeholder="First Name"
-                onChange={(e) => setFirstName(e.target.value)}
-            ></input>
-            <label htmlFor="last-name">Last Name:</label>
-            <input
-                type="text"
-                id="last-name"
-                value={lastName}
-                autoComplete="family-name"
-                placeholder="Last Name"
-                onChange={(e) => setLastName(e.target.value)}
-            ></input>
-        </>
-    );
-}
-
-function emailAndPhone(email, setEmail, phone, setPhone) {
-    return (
-        <>
-            <label htmlFor="email">Email: </label>
-            <input
-                type="email"
-                id="email"
-                value={email}
-                name="email"
-                autoComplete="email"
-                placeholder="example@email.com"
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            <label htmlFor="phone">Phone: </label>
-            <input
-                type="tel"
-                id="phone"
-                value={phone}
-                name="phone"
-                autoComplete="tel"
-                placeholder="312-XXX-XXXX"
-                onChange={(e) => setPhone(e.target.value)}
-            />
-        </>
-    );
-}
-
-function guestsAndOccasion(guests, setGuests, occasion, setOccasion) {
-    return (
-        <>
-            <label htmlFor="guests">Guests: </label>
-            <input
-                type="number"
-                placeholder="1"
-                min="1"
-                max="10"
-                id="guests"
-                value={guests}
-                onChange={(e) => setGuests(e.target.value)}
-            />
-            <label htmlFor="occasion">Occasion:</label>
-            <select
-                id="occasion"
-                value={occasion}
-                onChange={(e) => setOccasion(e.target.value)}
-            >
-                <option>Birthday</option>
-                <option>Anniversary</option>
-                <option>Engagement</option>
-                <option>Other</option>
-            </select>
-        </>
-    );
-}
-
-function otherOccasionSpecifier(otherOccasion, setOtherOccasion) {
-    return (
-        <>
-            <label htmlFor="other-details">
-                If 'Other' occasion was selected, please specify:
-            </label>
-            <input
-                type="text"
-                id="other-details"
-                autoComplete="none"
-                value={otherOccasion}
-                onChange={(e) => setOtherOccasion(e.target.value)}
-            ></input>
-        </>
-    );
-}
-
-function otherNotesAndRequests(notes, setNotes) {
-    return (
-        <>
-            <label htmlFor="notes">Any other notes or requests:</label>
-            <input
-                type="text"
-                id="notes"
-                value={notes}
-                autoComplete="none"
-                onChange={(e) => setNotes(e.target.value)}
-            ></input>
-        </>
-    );
-}
+import "./FormValidation";
+import {
+    validateName,
+    validateEmail,
+    validatePhone,
+    validateGuests,
+} from "./FormValidation";
 
 function BookingForm({ availableTimes, dispatch }) {
     const [firstName, setFirstName] = useState("");
@@ -124,26 +19,183 @@ function BookingForm({ availableTimes, dispatch }) {
     const [occasion, setOccasion] = useState("");
     const [otherOccasion, setOtherOccasion] = useState("");
     const [notes, setNotes] = useState("");
+    const [isDisabled, setIsDisabled] = useState(true);
 
-    const submitHander = (e) => {
-        e.preventDefault();
-        // For now, just output the booking info
-        console.log("Reservation Confirmed! Details:");
-        console.log(`First Name: ${firstName}`);
-        console.log(`Last Name: ${lastName}`);
-        console.log(`Email: ${email}`);
-        console.log(`Phone: ${phone}`);
-        console.log(`Date: ${date}`);
-        console.log(`Time: ${bookingTime}`);
-        console.log(`Guests: ${guests}`);
-        console.log(`Other Occasion Notes: ${otherOccasion}`);
-        console.log(`Notes or Requests: ${notes}`);
+    const firstAndLastNames = (
+        firstName,
+        setFirstName,
+        lastName,
+        setLastName
+    ) => {
+        return (
+            <>
+                <label htmlFor="first-name">First Name:</label>
+                <input
+                    type="text"
+                    id="first-name"
+                    value={firstName}
+                    autoComplete="given-name"
+                    placeholder="First Name"
+                    onChange={(e) => handleFieldChange(setFirstName, e)}
+                    required
+                ></input>
+                <label htmlFor="last-name">Last Name:</label>
+                <input
+                    type="text"
+                    id="last-name"
+                    value={lastName}
+                    autoComplete="family-name"
+                    placeholder="Last Name"
+                    onChange={(e) => handleFieldChange(setLastName, e)}
+                    required
+                ></input>
+            </>
+        );
+    };
+
+    const emailAndPhone = (email, setEmail, phone, setPhone) => {
+        return (
+            <>
+                <label htmlFor="email">Email: </label>
+                <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    name="email"
+                    autoComplete="email"
+                    placeholder="example@email.com"
+                    required
+                    onChange={(e) => handleFieldChange(setEmail, e)}
+                />
+                <label htmlFor="phone">Phone: </label>
+                <input
+                    type="tel"
+                    id="phone"
+                    value={phone}
+                    name="phone"
+                    autoComplete="tel"
+                    placeholder="312XXXXXXX"
+                    onChange={(e) => handleFieldChange(setPhone, e)}
+                    required
+                />
+            </>
+        );
+    };
+
+    const guestsAndOccasion = (guests, setGuests, occasion, setOccasion) => {
+        return (
+            <>
+                <label htmlFor="guests">Guests: </label>
+                <input
+                    type="number"
+                    placeholder="1"
+                    min="1"
+                    max="10"
+                    id="guests"
+                    value={guests}
+                    onChange={(e) => handleFieldChange(setGuests, e)}
+                    required
+                />
+                <label htmlFor="occasion">Occasion:</label>
+                <select
+                    id="occasion"
+                    value={occasion}
+                    onChange={(e) => handleFieldChange(setOccasion, e)}
+                    required
+                >
+                    <option value="" disabled>
+                        Select an Occasion
+                    </option>
+                    <option>Birthday</option>
+                    <option>Anniversary</option>
+                    <option>Engagement</option>
+                    <option>Other</option>
+                </select>
+            </>
+        );
+    };
+
+    const otherOccasionSpecifier = (otherOccasion, setOtherOccasion) => {
+        return (
+            <>
+                <label htmlFor="other-details">
+                    If 'Other' occasion was selected, please specify:
+                </label>
+                <input
+                    type="text"
+                    id="other-details"
+                    autoComplete="none"
+                    value={otherOccasion}
+                    onChange={(e) => setOtherOccasion(e.target.value)}
+                ></input>
+            </>
+        );
+    };
+
+    const otherNotesAndRequests = (notes, setNotes) => {
+        return (
+            <>
+                <label htmlFor="notes">Any other notes or requests:</label>
+                <input
+                    type="text"
+                    id="notes"
+                    value={notes}
+                    autoComplete="none"
+                    onChange={(e) => setNotes(e.target.value)}
+                ></input>
+            </>
+        );
     };
 
     const handleDateChange = (e) => {
         const selectedDate = e.target.value;
         setDate(selectedDate);
         dispatch({ type: "UPDATE_TIMES", payload: selectedDate });
+        formValidation();
+    };
+
+    const formValidation = () => {
+        if (
+            validateName(firstName) &&
+            validateName(lastName) &&
+            validateEmail(email) &&
+            validatePhone(phone) &&
+            validateGuests(guests)
+        ) {
+            setIsDisabled(false);
+        } else {
+            setIsDisabled(true);
+        }
+    };
+
+    const handleFieldChange = (hook, e) => {
+        hook(e.target.value);
+        formValidation();
+    };
+
+    const submissionSuccess = () => {
+        alert(
+            `Thank you for reserving a table at Little Lemon, ${firstName} ${lastName}! Please check ${email} for confirmation details`
+        );
+    };
+
+    const submitHander = (e) => {
+        e.preventDefault();
+        // Submission Success Alert
+        submissionSuccess();
+        // Reset form
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPhone("");
+        setDate("");
+        setBookingTime("");
+        setGuests("");
+        setBookingTime("");
+        setOccasion("");
+        setOtherOccasion("");
+        setNotes("");
+        setIsDisabled(true);
     };
 
     return (
@@ -168,13 +220,18 @@ function BookingForm({ availableTimes, dispatch }) {
                         id="res-date"
                         value={date}
                         onChange={handleDateChange}
+                        required
                     />
                     <label htmlFor="res-time">Time: </label>
                     <select
                         id="res-time"
                         value={bookingTime}
-                        onChange={(e) => setBookingTime(e.target.value)}
+                        onChange={(e) => handleFieldChange(setBookingTime, e)}
+                        required
                     >
+                        <option value="" disabled>
+                            Select a time
+                        </option>
                         {availableTimes.map((time, index) => (
                             <option key={index} value={time}>
                                 {time}
@@ -192,7 +249,11 @@ function BookingForm({ availableTimes, dispatch }) {
                     {otherOccasionSpecifier(otherOccasion, setOtherOccasion)}
                     {otherNotesAndRequests(notes, setNotes)}
                 </section>
-                <button className="booking-button" type="submit">
+                <button
+                    className="booking-button"
+                    disabled={isDisabled}
+                    type="submit"
+                >
                     Book Now
                 </button>
             </form>
