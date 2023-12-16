@@ -163,6 +163,8 @@ function BookingForm({ availableTimes, dispatch }) {
     };
 
     const formValidation = () => {
+        let shouldDisable = true;
+
         if (
             validateName(firstName) &&
             validateName(lastName) &&
@@ -170,10 +172,10 @@ function BookingForm({ availableTimes, dispatch }) {
             validatePhone(phone) &&
             validateGuests(guests)
         ) {
-            setIsDisabled(false);
-        } else {
-            setIsDisabled(true);
+            shouldDisable = false;
         }
+
+        setIsDisabled(shouldDisable);
     };
 
     const handleFieldChange = (hook, e) => {
